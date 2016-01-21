@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+app.controller('MainCtrl', ['$scope', '$http', '$state', 'githubFactory', function($scope, $http, $state, githubFactory) {
 
    $state.go('start');
 
@@ -15,15 +15,13 @@ app.controller('MainCtrl', ['$scope', '$http', '$state', function($scope, $http,
       $scope.users = undefined;
       $scope.noResult = false;
 
-      $http.get('https://api.github.com/search/users', {
-         params: {
-            q: $scope.username
-         }
-      }).success(function(data) {
-         $scope.users = data.items;
-         if($scope.users.length <= 0)
-            $scope.noResult = true;
-      });
+      githubFactory.searchUser($scope.username)
+         .success(function(data) {
+            $scope.users = data.items;
+            
+            if($scope.users.length <= 0)
+               $scope.noResult = true;
+         });
 
    };
    
