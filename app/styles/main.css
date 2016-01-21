@@ -36,28 +36,26 @@ body {
    font-size: 23px;
 }
 
+
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;
   right: 0;
-  /*-webkit-transition:all 0.5s ease-in-out;*/
-  /*transition:all 0.5s ease-in-out;*/
-  /*animation:0.9s rollOut ease;*/
-  animation:0.9s fadeOutLeft ease;
 }
 
+/* Affichage de la vue entrante */
 [ui-view].ng-enter {
-  /*animation:0.9s rollIn ease;*/
   animation:0.9s fadeInRight ease;
   opacity: 0;
 }
 
-[ui-view].ng-enter-active {
+/* Affichage de la vue sortante */
+[ui-view].ng-leave {
+  animation:0.9s fadeOutLeft ease;
   opacity: 1;
 }
 
-[ui-view].ng-leave {
-
+[ui-view].ng-enter-active {
   opacity: 1;
 }
 
@@ -179,11 +177,11 @@ hr {
   z-index: 10000;
 }
 
-/* when hiding the picture lightSpeedOut */
-.ng-hide-add         { animation:0.9s zoomOut ease; }
+/* Quand ça se cache */
+.ng-hide-add { animation:0.9s zoomOut ease; }
 
-/* when showing the picture  flipInX*/
-.ng-hide-remove      { animation:0.9s zoomIn ease; }
+/* Quand ça s'affiche */
+.ng-hide-remove { animation:0.9s zoomIn ease; }
 
 
 

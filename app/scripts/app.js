@@ -2,13 +2,9 @@
 
 var app = angular.module('te2App', ['angular-loading-bar', 'ngAnimate', 'ui.router', 'ui.bootstrap', 'chart.js']);
 
-app.run(['$http', function ($http) {
-   $http.defaults.headers.common['Accept'] = 'application/vnd.github.v3+json';
-   $http.defaults.headers.common['Authorization'] = 'Basic ' + 'bWFuYW1pejpMb25hdXA0NDg4';
-}]);
 
 app.config(function($stateProvider) {
-
+   // Etat concernant la page utilisateur
    $stateProvider.state('user', {
       url: '/user?username',
       templateUrl: 'views/user.html',
@@ -16,6 +12,8 @@ app.config(function($stateProvider) {
          $scope.username = $stateParams.username;
       }
    });
+
+   // Etat concernant la page repository
    $stateProvider.state('repo', {
       url: '/repo?username&repoName',
       templateUrl: 'views/repo.html',
@@ -24,6 +22,8 @@ app.config(function($stateProvider) {
          $scope.username = $stateParams.username;
       }
    });
+
+   // Etat concernant la page de départ (recherche)
    $stateProvider.state('start', {
       url: '/',
       templateUrl: 'views/start.html'

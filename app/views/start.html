@@ -15,7 +15,7 @@
    </div>
 
    <div class="row" ng-show="users" style="margin-top: 40px;">
-      <h4>Users list found</h4>
+      <h4>Search result</h4>
       <div class="col-md-12">
           <div class="list-group">
            <a href="#" ng-click="goToUser(user.login)" class="user-list-item list-group-item" ng-repeat="user in users"><img width="20px" src="{{user.avatar_url}}" style="margin-right: 10px;">{{ user.login }}<span style="float: right;">{{user.score}}</span></a>

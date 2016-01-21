@@ -1,3 +1,4 @@
+// Factory regroupant les requêtes faites à l'API GitHub
 app.factory('githubFactory', ['$http', function($http) {
 
    var urlBase = 'https://api.github.com';
