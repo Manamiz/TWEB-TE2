@@ -22,15 +22,15 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      'bower_components/jquery/dist/jquery.js',
-      'bower_components/angular/angular.js',
-      'bower_components/bootstrap/dist/js/bootstrap.js',
-      'bower_components/angular-ui-router/release/angular-ui-router.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'bower_components/Chart.js/Chart.js',
-      'bower_components/angular-chart.js/dist/angular-chart.js',
-      'bower_components/angular-loading-bar/build/loading-bar.js',
-      'bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/jquery/dist/jquery.js',
+      'app/bower_components/angular/angular.js',
+      'app/bower_components/bootstrap/dist/js/bootstrap.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'app/bower_components/Chart.js/Chart.js',
+      'app/bower_components/angular-chart.js/dist/angular-chart.js',
+      'app/bower_components/angular-loading-bar/build/loading-bar.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
