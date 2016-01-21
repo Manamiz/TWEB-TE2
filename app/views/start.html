@@ -1,0 +1,29 @@
+<div ng-controller="MainCtrl" style="margin-top: 50px;">
+   <div class="row">
+      <div class="col-md-12">
+         <div id="custom-search-input">
+            <div class="input-group vcenter">
+               <input my-enter="search()" ng-model="username" type="text" class="form-control input-lg" placeholder="Search an user on GitHub" />
+               <span class="input-group-btn">
+               <button class="btn btn-info btn-lg" type="button" ng-click="search()">
+               <i class="glyphicon glyphicon-search"></i>
+               </button>
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="row" ng-show="users" style="margin-top: 40px;">
+      <h4>Users list found</h4>
+      <div class="col-md-12">
+          <div class="list-group">
+           <a href="#" ng-click="goToUser(user.login)" class="user-list-item list-group-item" ng-repeat="user in users">{{ user.login }}</a>
+         </div>
+      </div>
+   </div>
+
+   <div ng-show="noResult">
+      <h1>No result found</h1>
+   </div>
+</div>

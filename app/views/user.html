@@ -1,0 +1,50 @@
+<div class="main" ng-controller="UserCtrl" ng-init="loadUserInfos()" ng-show="user">
+
+   <button class="btn btn-primary btn-back-to-search" ng-click="backToSearch()">Back to search</button>
+
+   <div class="row profile">
+      <div class="col-md-3">
+         <div class="profile-sidebar">
+            <!-- SIDEBAR USERPIC -->
+            <div class="profile-userpic">
+               <img src="{{ user.avatar_url }}" class="img-responsive" alt="">
+            </div>
+            <!-- END SIDEBAR USERPIC -->
+            <!-- SIDEBAR USER TITLE -->
+            <div class="profile-usertitle">
+               <div class="profile-usertitle-name">
+                  {{ user.name }}
+               </div>
+               <div class="profile-usertitle-job">
+                  {{ user.login }}
+               </div>
+               <hr>
+               <div style="text-align: left; margin-left: 20px;">
+                  <p ng-show="user.email"><i class="fa fa-envelope"></i> {{ user.email }}</p>
+                  <p ng-show="user.location"><i class="fa fa-map-marker"></i> {{ user.location }}</p>
+                  <p ng-show="user.company"><i class="fa fa-users"></i> {{ user.company }}</p>
+                  <p><i class="fa fa-clock-o"></i> Joined on {{ user.created_at | date:'mediumDate'}}</p>
+               </div>
+               <hr>
+               <div style="margin-bottom: 10px;">
+                  <span class="profile-usertitle-job" style="float: left; margin-left: 38px;" ng-show="user.followers">{{ user.followers }}<br>Follower(s)</span>
+                  <span class="profile-usertitle-job" ng-show="user.followers">{{ user.following }}<br>Following</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-9">
+            <div class="profile-content">
+
+               <h4 style="margin-bottom: 20px">Repositories</h4>
+               <div class="input-field" style="float: right; margin-top: -40px;">
+                  <input id="search" ng-model="searchRepo" type="text" placeHolder="Search...">
+               </div>
+               
+               <div class="list-group" ng-show="repos">
+                 <a type="button" ng-click="goToRepo(repo.name)" class="list-group-item" ng-repeat="repo in repos | filter:searchRepo" href="#">{{ repo.name }}</a>
+               </div>
+               <h1 ng-show="noRepo">No repositories</h1>
+      </div>
+   </div>
+</div>
