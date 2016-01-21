@@ -1,6 +1,11 @@
 {
   "name": "te2",
   "private": true,
+  "scripts": {
+    "test": "grunt test",
+    "start": "node app.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
@@ -35,10 +40,8 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "scripts": {
-    "test": "grunt test"
-  },
   "dependencies": {
+    "bower": "^1.7.2",
     "express": "^4.13.3",
     "gzippo": "^0.2.0"
   }
