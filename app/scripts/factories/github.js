@@ -35,6 +35,10 @@ app.factory('githubFactory', ['$http', function($http) {
       return $http.get(urlBase + '/repos/' + username + '/' + repoName + '/branches');
    }
 
+   githubFactory.getRepoStatsContributors = function(username, repoName) {
+      return $http.get(urlBase + '/repos/' + username + '/' + repoName + '/stats/contributors');
+   }
+
    githubFactory.getRepoStatsCommitActivity = function(username, repoName) {
       return $http.get(urlBase + '/repos/' + username + '/' + repoName + '/stats/commit_activity');
    }

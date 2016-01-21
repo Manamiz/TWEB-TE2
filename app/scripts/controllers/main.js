@@ -2,6 +2,7 @@
 
 app.controller('MainCtrl', ['$scope', '$http', '$state', 'githubFactory', function($scope, $http, $state, githubFactory) {
 
+
    $state.go('start');
 
    $scope.goToUser = function(username) {
