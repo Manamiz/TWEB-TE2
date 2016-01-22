@@ -1,12 +1,11 @@
-# te2
+# TWEB - TE2
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
 
-## Build & development
+## How to use
 
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+  - Clone or download the repo.
+  - Go to the folder
+  - Launch node app.js
+  - Go to url : localhost:3000
