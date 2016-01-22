@@ -47,6 +47,10 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
                $scope.languagesLabels.push(key);
                $scope.languagesData.push(value);
             });
+
+            if(!$scope.$$phase) {
+               $scope.$apply();
+            }
          })
          .error(function(data) {
             alert('(GET REPOS LANGUAGES) An error occured !');
@@ -65,6 +69,10 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
                // Compte le nombre de commits total
                $scope.numberOfCommits += value.total;
             });
+
+            if(!$scope.$$phase) {
+               $scope.$apply();
+            }
          })
          .error(function(data) {
             alert('(GET REPOS CONTRIBUTORS STATS) An error occured !');
@@ -85,6 +93,10 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
                   i++;
                })
             });
+
+            if(!$scope.$$phase) {
+               $scope.$apply();
+            }
          })
          .error(function(data) {
             alert('(GET REPOS COMMIT) An error occured !');
