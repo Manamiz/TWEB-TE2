@@ -7,5 +7,6 @@ version 0.15.1.
 
   - Clone or download the repo.
   - Go to the folder
-  - Launch node app.js
+  - npm install
+  - node app.js
   - Go to url : localhost:3000
