@@ -2,7 +2,7 @@
 
 var app = angular.module('te2App', ['angular-loading-bar', 'ngAnimate', 'ui.router', 'ui.bootstrap', 'chart.js']);
 
-
+// Configuration des états
 app.config(function($stateProvider) {
    // Etat concernant la page utilisateur
    $stateProvider.state('user', {
