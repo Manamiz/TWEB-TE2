@@ -17,9 +17,6 @@
           <a class="circle-tile-footer" data-toggle="collapse" ng-show="contributors" data-target="#contributors">Show <i class="fa fa-chevron-circle-right"></i></a>
           <div id="contributors" class="collapse">
              <div class="list-group">
-              <!-- Liste clickable
-              <a href="#" ng-click="goToUser(contributor.login)" style="text-align: left;" class="user-list-item list-group-item" ng-repeat="contributor in contributors"><img width="20px" src="{{contributor.avatar_url}}" style="margin-right: 10px; float: left;">{{ contributor.login }}</a>
-              -->
               <li style="text-align: left;" class="user-list-item list-group-item" ng-repeat="contributor in contributors"><img width="20px" src="{{contributor.avatar_url}}" style="margin-right: 10px; float: left;">{{ contributor.login }}</li>
             </div>
          </div>
@@ -50,8 +47,8 @@
                Language(s)
             </div>
             <div class="panel-body">
-              <h2 style="text-align: center; vertical-align: middle;" ng-show="!languagesData[0]">No languages</h2>
-               <canvas ng-show="languagesData[0]" id="doughnut" class="chart chart-doughnut" chart-data="languagesData" chart-labels="languagesLabels" chart-legend="true"></canvas> 
+              <h2 style="text-align: center; vertical-align: middle;" ng-show="!languagesData.length">No language</h2>
+               <canvas ng-show="languagesData.length" id="doughnut" class="chart chart-doughnut" chart-data="languagesData" chart-labels="languagesLabels" chart-legend="true"></canvas> 
             </div>
          </div>
       </div>
@@ -61,7 +58,8 @@
                Commit(s) per contributor - {{ numberOfCommits }} in total
             </div>
             <div class="panel-body">
-               <canvas id="chart-pie" class="chart chart-pie" chart-data="contributorsCommitsData" chart-labels="contributorsCommitsLabels" chart-legend="true"></canvas> 
+              <h2 style="text-align: center; vertical-align: middle;" ng-show="!contributorsCommitsData.length">No commit</h2>
+               <canvas id="chart-pie" ng-show="contributorsCommitsData.length" class="chart chart-pie" chart-data="contributorsCommitsData" chart-labels="contributorsCommitsLabels" chart-legend="true"></canvas> 
             </div>
          </div>
       </div>
@@ -71,7 +69,8 @@
                Number of commits per day (last year)
             </div>
             <div class="panel-body">
-               <canvas id="bar" class="chart chart-bar" chart-data="[commitsActivityData]" chart-labels="commitsActivityLabels"></canvas> 
+              <h2 style="text-align: center; vertical-align: middle;" ng-show="!commitsActivityData.length">No commit activity</h2>
+               <canvas id="bar" ng-show="commitsActivityData.length" class="chart chart-bar" chart-data="[commitsActivityData]" chart-labels="commitsActivityLabels"></canvas> 
             </div>
          </div>
       </div>

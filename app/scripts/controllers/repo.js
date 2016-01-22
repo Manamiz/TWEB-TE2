@@ -17,7 +17,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
             $scope.repo = data;
          })
          .error(function(data) {
-            alert('(GET REPOS) An error occured !');
+            alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
 
@@ -26,7 +26,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
             $scope.contributors = data;
          })
          .error(function(data) {
-            alert('(GET REPOS CONTRIBUTORS) An error occured !');
+            alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
 
@@ -35,7 +35,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
             $scope.branches = data;
          })
          .error(function(data) {
-            alert('(GET REPOS BRANCHES) An error occured !');
+            alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
 
@@ -53,7 +53,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
             }
          })
          .error(function(data) {
-            alert('(GET REPOS LANGUAGES) An error occured !');
+            alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
 
@@ -75,7 +75,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
             }
          })
          .error(function(data) {
-            alert('(GET REPOS CONTRIBUTORS STATS) An error occured !');
+            alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
          
@@ -99,7 +99,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
             }
          })
          .error(function(data) {
-            alert('(GET REPOS COMMIT) An error occured !');
+            alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
 

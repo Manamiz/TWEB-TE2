@@ -7,8 +7,8 @@ app.controller('UserCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
          .success(function(data) {
             $scope.user = data;
          })
-         .error(function(data) {
-            alert('(GET USERS) An error occured !');
+         .error(function(data, status) {
+            alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
 
@@ -20,7 +20,7 @@ app.controller('UserCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
                $scope.noRepo = true;
          })
          .error(function(data) {
-            alert('(GET USERS REPOS) An error occured !');
+            alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
 
