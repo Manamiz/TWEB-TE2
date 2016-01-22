@@ -16,7 +16,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
          .success(function(data) {
             $scope.repo = data;
          })
-         .error(function(data) {
+         .error(function(data, status) {
             alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
@@ -25,7 +25,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
          .success(function(data) {
             $scope.contributors = data;
          })
-         .error(function(data) {
+         .error(function(data, status) {
             alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
@@ -34,7 +34,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
          .success(function(data) {
             $scope.branches = data;
          })
-         .error(function(data) {
+         .error(function(data, status) {
             alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
@@ -52,7 +52,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
                $scope.$apply();
             }
          })
-         .error(function(data) {
+         .error(function(data, status) {
             alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
@@ -74,7 +74,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
                $scope.$apply();
             }
          })
-         .error(function(data) {
+         .error(function(data, status) {
             alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
@@ -98,7 +98,7 @@ app.controller('RepoCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
                $scope.$apply();
             }
          })
-         .error(function(data) {
+         .error(function(data, status) {
             alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });

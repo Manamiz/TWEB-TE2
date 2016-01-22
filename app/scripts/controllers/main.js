@@ -26,8 +26,8 @@ app.controller('MainCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
             if($scope.users.length <= 0)
                $scope.noResult = true;
          })
-         .error(function(data) {
-            alert('(SEARCH USER) an error occured !');
+         .error(function(data, status) {
+            alert("Error " + status + " : \n\n" + data.message);
          })
 
    };

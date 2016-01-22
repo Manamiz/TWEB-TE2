@@ -19,7 +19,7 @@ app.controller('UserCtrl', ['$scope', '$http', '$state', 'githubFactory', functi
             if($scope.repos.length <= 0)
                $scope.noRepo = true;
          })
-         .error(function(data) {
+         .error(function(data, status) {
             alert("Error " + status + " : \n\n" + data.message);
             $scope.backToSearch();
          });
